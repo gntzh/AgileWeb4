@@ -9,6 +9,11 @@ public class Todo {
         this.finished = finished;
     }
 
+    public Todo(String name, String detail) {
+        this.name = name;
+        this.detail = detail;
+    }
+
     public Todo(String name, String detail, Boolean finished) {
         this.name = name;
         this.detail = detail;
