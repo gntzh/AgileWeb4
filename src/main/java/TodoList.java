@@ -2,7 +2,7 @@ public interface TodoList {
     /**
      * 根据Todo的id获取Todo
      * @param id
-     * @return
+     * @return 若返回值为null，表示给定id的Todo不存在
      */
     public Todo get(String id);
 
