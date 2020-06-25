@@ -1,10 +1,14 @@
-public class Todo {
+import java.io.Serializable;
+import java.util.Date;
+
+public class Todo implements Serializable {
     private String name;
     private String detail;
     private Boolean finished;
     private String id;
 
     public Todo(String name, Boolean finished) {
+        this.id = String.valueOf(new Date().getTime());
         this.name = name;
         this.finished = finished;
     }
@@ -12,12 +16,14 @@ public class Todo {
     public Todo(String name, String detail) {
         this.name = name;
         this.detail = detail;
+        this.id = String.valueOf(new Date().getTime());
     }
 
     public Todo(String name, String detail, Boolean finished) {
         this.name = name;
         this.detail = detail;
         this.finished = finished;
+        this.id = String.valueOf(new Date().getTime());
     }
 
     public Todo(String name, Boolean finished, String id) {
