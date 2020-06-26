@@ -1,5 +1,6 @@
 import java.io.Serializable;
 import java.util.Date;
+import java.util.UUID;
 
 public class Todo implements Serializable {
     private String name;
@@ -8,7 +9,7 @@ public class Todo implements Serializable {
     private String id;
 
     public Todo(String name, Boolean finished) {
-        this.id = String.valueOf(new Date().getTime());
+        this.id = UUID.randomUUID().toString();
         this.name = name;
         this.finished = finished;
     }
@@ -16,14 +17,14 @@ public class Todo implements Serializable {
     public Todo(String name, String detail) {
         this.name = name;
         this.detail = detail;
-        this.id = String.valueOf(new Date().getTime());
+        this.id = UUID.randomUUID().toString();
     }
 
     public Todo(String name, String detail, Boolean finished) {
         this.name = name;
         this.detail = detail;
         this.finished = finished;
-        this.id = String.valueOf(new Date().getTime());
+        this.id = UUID.randomUUID().toString();
     }
 
     public Todo(String name, Boolean finished, String id) {
