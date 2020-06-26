@@ -47,7 +47,7 @@ class TodoListImplTest {
         TodoList todoList = new TodoListImpl();
         String id = todoList.add(new Todo(name, detail, finished)).getId();
         Todo todo = todoList.get(id);
-        assertEquals(detail, todo.getFinished());
+        assertEquals(finished, todo.getFinished());
         todoList.finish(id);
         assertEquals(true, todo.getFinished());
     }
