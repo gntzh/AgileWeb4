@@ -2,22 +2,22 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TodoListImpl implements TodoList{
+public class TodoListImpl implements TodoList {
 
     private List<Todo> todoList;
 
     public TodoListImpl() {
         File data = new File("src/conf/data");
-        if(data.length() == 0){
+        if (data.length() == 0) {
             todoList = new ArrayList<>();
-        }else {
+        } else {
             ObjectInputStream todoListInputStream = null;
             try {
                 todoListInputStream = new ObjectInputStream(new FileInputStream(data));
                 todoList = (List<Todo>) todoListInputStream.readObject();
             } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
-            }finally {
+            } finally {
                 try {
                     assert todoListInputStream != null;
                     todoListInputStream.close();
@@ -32,8 +32,8 @@ public class TodoListImpl implements TodoList{
 
     @Override
     public Todo get(String id) {
-        for (Todo temp : todoList){
-            if (temp.getId().equals(id)){
+        for (Todo temp : todoList) {
+            if (temp.getId().equals(id)) {
                 return temp;
             }
         }
@@ -49,8 +49,8 @@ public class TodoListImpl implements TodoList{
 
     @Override
     public Todo delete(String id) {
-        for (Todo temp : todoList){
-            if (temp.getId().equals(id)){
+        for (Todo temp : todoList) {
+            if (temp.getId().equals(id)) {
                 todoList.remove(temp);
                 save();
                 return temp;
@@ -61,8 +61,8 @@ public class TodoListImpl implements TodoList{
 
     @Override
     public Todo finish(String id) {
-        for (Todo temp : todoList){
-            if (temp.getId().equals(id)){
+        for (Todo temp : todoList) {
+            if (temp.getId().equals(id)) {
                 temp.setFinished(true);
                 save();
                 return temp;
@@ -78,9 +78,9 @@ public class TodoListImpl implements TodoList{
             todoListOutputStream.writeObject(todoList);
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
-                if (todoListOutputStream != null){
+                if (todoListOutputStream != null) {
                     todoListOutputStream.close();
                 }
             } catch (IOException e) {

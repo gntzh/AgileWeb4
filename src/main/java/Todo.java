@@ -74,8 +74,8 @@ public class Todo implements Serializable {
     @Override
     public String toString() {
         return "Todo{" +
-                ", id='" + id + '\'' +
-                "name='" + name + '\'' +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
                 ", finished=" + finished +
                 '}';
     }

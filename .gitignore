@@ -24,3 +24,5 @@ gradle
 
 ### VS Code ###
 .vscode/
+
+src/conf/data
