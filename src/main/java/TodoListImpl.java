@@ -56,6 +56,7 @@ public class TodoListImpl implements TodoList {
         for (Todo temp : todoList){
             if (temp.getId().equals(todo.getId())){
                 temp.update(todo);
+                save();
                 return temp;
             }
         }

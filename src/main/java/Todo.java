@@ -39,7 +39,7 @@ public class Todo implements Serializable {
         this.id = id;
     }
 
-    public Todo(String name, Boolean finished, String detail, String id) {
+    public Todo(String name, String detail, Boolean finished, String id) {
         this.name = name;
         this.detail = detail;
         this.finished = finished;
