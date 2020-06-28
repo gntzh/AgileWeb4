@@ -54,37 +54,37 @@ class TodoListImplTest {
 
     static List<Arguments> singleData() {
         return List.of(
-                Arguments.arguments("æ•æ·Webå¼€å‘å¤§ä½œä¸š", "ä¸€å®šè¦å®Œæˆï¼Œå æ¯”50%ï¼", true),
-                Arguments.arguments("å¤ä¹ é«˜æ•°ç¬¬ä¸€ç« ", "ç•¥", true),
-                Arguments.arguments("å¤ä¹ å¤§ç‰©ç¬¬ä¸€ç« ", "ç•¥", false),
-                Arguments.arguments("ä½“è‚²æ³¢æ¯”è·³", "æˆªæ­¢åˆ°å‘¨å…­æ™š24:00", false),
-                Arguments.arguments("å¾®åšçˆ¬è™«å¯¹æ¥æ•°æ®åº“", "ç•¥", false)
+                Arguments.arguments("Ãô½İWeb¿ª·¢´ó×÷Òµ", "Ò»¶¨ÒªÍê³É£¬Õ¼±È50%£¡", true),
+                Arguments.arguments("¸´Ï°¸ßÊıµÚÒ»ÕÂ", "ÂÔ", true),
+                Arguments.arguments("¸´Ï°´óÎïµÚÒ»ÕÂ", "ÂÔ", false),
+                Arguments.arguments("ÌåÓı²¨±ÈÌø", "½ØÖ¹µ½ÖÜÁùÍí24:00", false),
+                Arguments.arguments("Î¢²©ÅÀ³æ¶Ô½ÓÊı¾İ¿â", "ÂÔ", false)
         );
     }
 
     static List<Arguments> data() {
         return List.of(
                 Arguments.arguments(List.of(
-                        List.of("æ•æ·Webå¼€å‘ä½œä¸šæ‰“åŒ…æäº¤", "æ³¨æ„æ ¼å¼")
+                        List.of("Ãô½İWeb¿ª·¢×÷Òµ´ò°üÌá½»", "×¢Òâ¸ñÊ½")
                 )),
                 Arguments.arguments(List.of(
-                        List.of("å‘ƒ", "ç•¥"),
-                        List.of("å¼€å­¦å–½", "7.20"),
-                        List.of("åˆå¼€å­¦å–½", "8.15")
+                        List.of("ßÀ", "ÂÔ"),
+                        List.of("¿ªÑ§à¶", "7.20"),
+                        List.of("ÓÖ¿ªÑ§à¶", "8.15")
                 )),
                 Arguments.arguments(List.of(
-                        List.of("æ•æ·Webå¼€å‘å¤§ä½œä¸š", "ä¸€å®šè¦å®Œæˆï¼Œå æ¯”50%ï¼"),
-                        List.of("å¤ä¹ é«˜æ•°ç¬¬ä¸€ç« ", "ç•¥"),
-                        List.of("å¤ä¹ å¤§ç‰©ç¬¬ä¸€ç« ", "ç•¥"),
-                        List.of("å¤ä¹ çº¿ä»£ç¬¬ä¸€ç« ", "ç•¥"),
-                        List.of("å¾®åšçˆ¬è™«å¯¹æ¥æ•°æ®åº“", "ç•¥")
+                        List.of("Ãô½İWeb¿ª·¢´ó×÷Òµ", "Ò»¶¨ÒªÍê³É£¬Õ¼±È50%£¡"),
+                        List.of("¸´Ï°¸ßÊıµÚÒ»ÕÂ", "ÂÔ"),
+                        List.of("¸´Ï°´óÎïµÚÒ»ÕÂ", "ÂÔ"),
+                        List.of("¸´Ï°Ïß´úµÚÒ»ÕÂ", "ÂÔ"),
+                        List.of("Î¢²©ÅÀ³æ¶Ô½ÓÊı¾İ¿â", "ÂÔ")
                 )),
                 Arguments.arguments(List.of(
-                        List.of("å›¾ä¹¦é¦†è¿˜ä¹¦", "Pythonæ ‡å‡†åº“"),
-                        List.of("å¤ä¹ é«˜æ•°ç¬¬ä¸€ç« ", "ç•¥"),
-                        List.of("å¤ä¹ å¤§ç‰©ç¬¬ä¸€ç« ", "ç•¥"),
-                        List.of("å¤ä¹ çº¿ä»£ç¬¬ä¸€ç« ", "ç•¥"),
-                        List.of("å¾®åšçˆ¬è™«å¯¹æ¥æ•°æ®åº“", "ç•¥")
+                        List.of("Í¼Êé¹İ»¹Êé", "Python±ê×¼¿â"),
+                        List.of("¸´Ï°¸ßÊıµÚÒ»ÕÂ", "ÂÔ"),
+                        List.of("¸´Ï°´óÎïµÚÒ»ÕÂ", "ÂÔ"),
+                        List.of("¸´Ï°Ïß´úµÚÒ»ÕÂ", "ÂÔ"),
+                        List.of("Î¢²©ÅÀ³æ¶Ô½ÓÊı¾İ¿â", "ÂÔ")
                 ))
         );
     }
