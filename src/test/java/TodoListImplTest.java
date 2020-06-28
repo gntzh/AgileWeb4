@@ -52,6 +52,36 @@ class TodoListImplTest {
         assertEquals(true, todo.getFinished());
     }
 
+    @ParameterizedTest
+    @MethodSource("singleData")
+    void update(String name, String detail, Boolean finished){
+        TodoList todoList = new TodoListImpl();
+        String id = todoList.add(new Todo(name, detail, finished)).getId();
+
+        String tarName = getRandomString(20);
+        String tarDetail = getRandomString(50);
+
+        boolean tarF = (Math.random() > 0.5);
+        Todo tarTodo = new Todo(tarName, tarDetail, tarF, id);
+        Todo res = todoList.update(tarTodo);
+
+        assertEquals(id, res.getId());
+        assertEquals(tarName, res.getName());
+        assertEquals(tarDetail, res.getDetail());
+        assertEquals(tarF, res.getFinished());
+    }
+
+    String getRandomString(int length){
+        String charSet = "1234567890qwertyuiopasdfghjklzxcvbnm";
+        StringBuilder buffer = new StringBuilder(charSet);
+        StringBuilder res = new StringBuilder();
+        int len = buffer.length();
+        for (int i = 0; i < length; i++) {
+            res.append(buffer.charAt((int) (Math.random() * len)));
+        }
+        return res.toString();
+    }
+
     static List<Arguments> singleData() {
         return List.of(
                 Arguments.arguments("敏捷Web开发大作业", "一定要完成，占比50%！", true),
