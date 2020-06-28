@@ -11,23 +11,15 @@ public class TodoListImpl implements TodoList {
         if (data.length() == 0) {
             todoList = new ArrayList<>();
         } else {
-            ObjectInputStream todoListInputStream = null;
-            try {
-                todoListInputStream = new ObjectInputStream(new FileInputStream(data));
+            try (ObjectInputStream todoListInputStream = new ObjectInputStream(new FileInputStream(data));) {
                 todoList = (List<Todo>) todoListInputStream.readObject();
             } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
-            } finally {
-                try {
-                    assert todoListInputStream != null;
-                    todoListInputStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
         }
-        todoList = new ArrayList<>();
 
+        todoList = new ArrayList<>();
+        System.out.println(todoList);
     }
 
     @Override
@@ -60,6 +52,17 @@ public class TodoListImpl implements TodoList {
     }
 
     @Override
+    public Todo update(Todo todo) {
+        for (Todo temp : todoList){
+            if (temp.getId().equals(todo.getId())){
+                temp.update(todo);
+                return temp;
+            }
+        }
+        return null;
+    }
+
+    @Override
     public Todo finish(String id) {
         for (Todo temp : todoList) {
             if (temp.getId().equals(id)) {
@@ -72,20 +75,10 @@ public class TodoListImpl implements TodoList {
     }
 
     private void save() {
-        ObjectOutputStream todoListOutputStream = null;
-        try {
-            todoListOutputStream = new ObjectOutputStream(new FileOutputStream(new File("src/conf/data")));
+        try (ObjectOutputStream todoListOutputStream = new ObjectOutputStream(new FileOutputStream(new File("src/conf/data")));) {
             todoListOutputStream.writeObject(todoList);
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                if (todoListOutputStream != null) {
-                    todoListOutputStream.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 }

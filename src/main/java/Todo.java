@@ -14,6 +14,12 @@ public class Todo implements Serializable {
         this.finished = finished;
     }
 
+    public void update(Todo todo){
+        this.name = todo.name;
+        this.detail = todo.detail;
+        this.finished = todo.finished;
+    }
+
     public Todo(String name, String detail) {
         this.name = name;
         this.detail = detail;
