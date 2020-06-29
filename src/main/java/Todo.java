@@ -14,6 +14,12 @@ public class Todo implements Serializable {
         this.finished = finished;
     }
 
+    public void update(Todo todo){
+        this.name = todo.name;
+        this.detail = todo.detail;
+        this.finished = todo.finished;
+    }
+
     public Todo(String name, String detail) {
         this.name = name;
         this.detail = detail;
@@ -33,7 +39,7 @@ public class Todo implements Serializable {
         this.id = id;
     }
 
-    public Todo(String name, Boolean finished, String detail, String id) {
+    public Todo(String name, String detail, Boolean finished, String id) {
         this.name = name;
         this.detail = detail;
         this.finished = finished;
